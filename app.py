@@ -8,7 +8,7 @@ ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:N4oVwNghia@localhost/apple'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://pgfflqdcwytbbf:41f60f4cff3c71b5b2bf52f7d6684e641a7362729c43ca015789a5474aeb505d@ec2-52-205-3-3.compute-1.amazonaws.com:5432/d56bca18fa913v'
 else:
     app.debug = False
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres:///pgfflqdcwytbbf:41f60f4cff3c71b5b2bf52f7d6684e641a7362729c43ca015789a5474aeb505d@ec2-52-205-3-3.compute-1.amazonaws.com:5432/d56bca18fa913v'
