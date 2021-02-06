@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Header -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nghia's Cloud-ASM</title>
+   
+      <!-- add icon link -->
+      <link rel = "icon" href =  
+      "../static/apple-icon.png" 
+              type = "image/x-icon"> 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <!-- style -->
+    <style>
+        html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: "Monument Extended", sans-serif;
+    overflow: hidden;
+    background-color: black;
+    
+  }
+  a {   color: gray;
+    text-decoration: none; } 
+
+  a:hover {   
+    color: white;
+   } 
+
+  /* apple logo  */
+
+  /* nav  */
+
+  nav {
+    width: 75%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .menu-item-right {
+    align-items: right;
+    text-align: right;
+  }
+
+  .menu-item {
+    flex: 2;
+
+    font-size: 17px;
+  }
+
+  span.menu-link {
+    opacity: 0.7;
+    color: gray;
+  }
+
+  span.menu-link:hover {
+    opacity: 1;
+    color: white;
+    cursor: pointer;
+  }
+
+  .menu-link {
+    padding: 0 30px;
+  }
+
+  /* hero img  */
+
+  .wrapper-img {
+    overflow: hidden;
+    position: relative;
+    top: 50% !important;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 30%;
+    height: 90vh;
+  }
+  img:hover {
+    cursor: none;
+  }
+
+  img {
+    width: 100%;
+    height: 600px;
+    box-shadow: none;
+    object-fit: cover;
+  }
+
+  .box {
+    background: black;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  /* header  */
+
+  .header {
+    position: absolute;
+    top: 60%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header h1 {
+    font-size: 90px;
+    text-transform: uppercase;
+    margin: 0;
+    mix-blend-mode: overlay;
+  }
+
+  .header-1 .letter {
+    display: inline-block;
+    line-height: 1em;
+    color: #ffffff;
+  }
+
+  .header-2 .letter {
+    display: inline-block;
+    line-height: 1em;
+    color: #ffffff;
+  }
+
+  /* hero-container */
+
+  .sidebar-text {
+    position: absolute;
+    top: 95%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: rgba(51, 67, 61, 0.5);
+  }
+  .sidebar-text:hover {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .img-nav {
+    position: absolute;
+    right: 13%;
+    bottom: 13%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: blue;
+  }
+
+  /* loader  */
+
+  .wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 2;
+  }
+
+  .loader {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    width: 8%;
+    height: 20vh;
+    background: #000;
+    z-index: 2;
+  }
+form { 
+  width: 108px;
+  height: 19px;
+
+}
+
+
+
+    </style>
+  <!--/style -->
+
+</head>
+<!--/header -->
+
+<!-- body -->
+<body>
+    
+    <!-- loader  -->
+    <div class="wrapper">
+        <div class="loader"></div>
+    </div>
+    
+    <div class="container">
+        
+        <!-- nav  -->
+        <nav class="menu">
+            <div class=" menu-item">
+                <span class="menu-link"> <i class="fa fa-apple"></i>  </span>
+                <span class="menu-link">MAC</span>   
+                <span class="menu-link">iPad</span>
+                <span class="menu-link">iPhone</span>
+                <span class="menu-link">Watch</span>
+                <span class="menu-link">TV</span>
+               
+                <span class="menu-link">Support</span>
+                <span class="menu-link"><a href=feedback>
+                Feedback</a></span>
+                <span class="menu-link"><i class="fa fa-search"></i></span>
+                <span class="menu-link"> <i class="fa fa-shopping-bag"></i> </span>
+            </div>
+            <div class=" menu-item-right">
+                <span class="menu-link"> <i class="fa fa-sign-in" aria-hidden="true"></i>
+                </i></span>
+            </div>
+          
+        </nav>
+
+        <!-- hero image  -->
+        <div class="wrapper-img">
+            <div class="box"></div>
+            <div>
+              <img class="image" src="https://images.unsplash.com/photo-1594283025372-dfd7190b3bed?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=628&q=80">
+            </div>
+          </div>
+
+        <!-- header  -->
+        <div class="header">
+            <h1 class="header-1">"Think</h1>
+            <h1 class="header-2">different"</h1>
+        </div>
+
+        <!-- nghia-container  -->
+       <div class="hero-container">
+            <div class="sidebar-text">createbynghia - GCS190654</div>
+            
+        </div>
+
+        <!-- test -->
+        
+    </div>
+
+    <!-- Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+            
+      var textWrapper = document.querySelector('.header-1');
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+      anime.timeline()
+      .add({
+          targets: '.header-1 .letter',
+          translateY: [200,0],
+          translateZ: 0,
+          opacity: [0,1],
+          easing: "easeOutExpo",
+          duration: 2000,
+          delay: (el, i) => 4800 + 50 * i
+      });
+
+      var textWrapper = document.querySelector('.header-2');
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+      anime.timeline()
+      .add({
+          targets: '.header-2 .letter',
+          translateY: [200,0],
+          translateZ: 0,
+          opacity: [0,1],
+          easing: "easeOutExpo",
+          duration: 2000,
+          delay: (el, i) => 4800 + 50 * i
+      });
+
+      TweenMax.to(".wrapper", 2, {
+          top: "-100%",
+          ease: Expo.easeInOut,
+          delay: 3
+      });
+
+      var tl = new TimelineMax();
+
+      tl.from(".loader", 1.6, {
+          scaleY: "0%",
+          y: 80,
+          ease: Expo.easeInOut,
+          delay: 1,
+          transformOrigin:"50% 100%"
+      });
+
+      tl.to(".loader", 1.6, {
+          height: "20vh",
+          scaleY: "0%",
+          ease: Expo.easeInOut,
+          transformOrigin:"0% -100%"
+      });
+
+      TweenMax.to(".box", 2.4, {
+      y: "-100%",
+      ease: Expo.easeInOut,
+      delay: 3.8,
+      });
+
+      var tl = new TweenMax.staggerFrom(".menu > div", 2, {
+          opacity: 0,     
+          y: 30,
+          ease: Expo.easeInOut,
+          delay: 4.2
+      }, 0.1);
+
+      var tl = new TweenMax.staggerFrom(".hero-container > div", 2, {
+          opacity: 0,     
+          y: 30,
+          ease: Expo.easeInOut,
+          delay: 4.2
+      }, 0.1);
+
+    </script>
+    <!--/Script -->
+
+</body>
+<!--/body -->
+
+</html>
