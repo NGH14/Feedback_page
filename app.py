@@ -51,7 +51,7 @@ def submit():
         # Return if not fill.
         if customer == '' or service == '':
             return render_template('feedback.html', message='Please enter yourname and the sevice field')
-        if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
+        if db.session.query(Feedback).filter(Feedback.customer == customer and Feedback.service == service).count() == 0:
             data = Feedback(customer, service, rating, comments)
             db.session.add(data)
             db.session.commit()
