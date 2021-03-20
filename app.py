@@ -8,12 +8,10 @@ ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://pgfflqdcwytbbf:41f60f4cff3c71b5b2bf52f7d6684e641a7362729c43ca015789a5474aeb505d@ec2-52-205-3-3.compute-1.amazonaws.com:5432/d56bca18fa913v'
-    
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:N4oVwNghia@localhost/apple'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://yxiisupnlbqnxg:478409dc8195079c56862fd56eaf1f1cc05d0660514e2359789e787aefbffe77@ec2-34-203-255-149.compute-1.amazonaws.com:5432/denou4tr02pimgv'
-
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://pgfflqdcwytbbf:41f60f4cff3c71b5b2bf52f7d6684e641a7362729c43ca015789a5474aeb505d@ec2-52-205-3-3.compute-1.amazonaws.com:5432/d56bca18fa913v'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -53,7 +51,6 @@ def submit():
         # Return if not fill.
         if customer == '' or service == '':
             return render_template('feedback.html', message='Please enter yourname and the sevice field')
-            
         if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
             data = Feedback(customer, service, rating, comments)
             db.session.add(data)
